@@ -41,4 +41,28 @@ public class Dolphin extends Animal implements Swim, Trainable {
     public void respondToCommand(String command) {
         System.out.println(getName() + " respond to '" + command + "' command with excitement! ");
     }
+
+
+    public int getIntelligenceLevel() {
+        return intelligenceLevel;
+    }
+    public void setIntelligenceLevel(int intelligenceLevel) {
+        this.intelligenceLevel = intelligenceLevel;
+    }
+
+
+    public double getSwimSpeed() {
+        return swimSpeed;
+    }
+    public void setSwimSpeed(double swimSpeed) {
+        this.swimSpeed = swimSpeed;
+    }
+
+
+    public int getClickVolume() {
+        return clickVolume;
+    }
+    public void setClickVolume(int clickVolume) {
+        this.clickVolume = clickVolume;
+    }
 }
