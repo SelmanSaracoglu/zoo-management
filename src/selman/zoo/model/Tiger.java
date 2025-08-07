@@ -7,8 +7,8 @@ public class Tiger extends Animal implements Walk {
     private double speed;
     private int roarVolume;
 
-    public Tiger(int age,int numberOfStripes, double speed, int roarVolume) {
-        super("Tiger", age, "Panthera tigris");
+    public Tiger(String name, int age,int numberOfStripes, double speed, int roarVolume) {
+        super(name, age, "Panthera tigris");
         this.numberOfStripes = numberOfStripes;
         this.roarVolume = roarVolume;
         this.speed = speed;

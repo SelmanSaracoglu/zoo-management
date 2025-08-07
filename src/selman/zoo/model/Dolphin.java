@@ -10,8 +10,8 @@ public class Dolphin extends Animal implements Swim, Trainable {
     private double swimSpeed;       // km/h
     private int clickVolume;        // decibel
 
-    public Dolphin(int age, int intelligenceLevel, double swimSpeed, int clickVolume){
-        super("Dolphin", age, "Delphinidea");
+    public Dolphin(String name, int age, int intelligenceLevel, double swimSpeed, int clickVolume){
+        super(name, age, "Delphinidea");
         this.intelligenceLevel = intelligenceLevel;
         this.swimSpeed = swimSpeed;
         this.clickVolume = clickVolume;
