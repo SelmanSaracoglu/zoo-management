@@ -11,6 +11,10 @@ public class ZooApp {
         Zoo zoo = new Zoo();
         boolean running = true;
 
+        System.out.print("Enter your role (manager/user): ");
+        String role = scanner.nextLine();
+        boolean isManager = role.equalsIgnoreCase("manager");
+
         while (running) {
             System.out.println("==== Zoo Management ====");
             System.out.println("1. Add new animal");
@@ -18,8 +22,13 @@ public class ZooApp {
             System.out.println("3. Remove animal");
             System.out.println("4. View animal details");
             System.out.println("5. Show total animal count");
+            if (isManager){
+                System.out.println("6. Add new animal type ");
+                System.out.println("7. Exit");
+            }
             System.out.println("6. Exit");
-            System.out.print("Your choice: ");
+
+            System.out.print("Enter your choice: ");
 
             int choice = scanner.nextInt();
             scanner.nextLine();
@@ -134,6 +143,27 @@ public class ZooApp {
 
                                 Elephant elephant = new Elephant(age, weight, trunkLength);
                                 zoo.addAnimal(elephant);
+                                break;
+                            }
+                            case 6: {
+                                if (isManager) {
+                                    System.out.println("Enter new animal type name: ");
+                                    String typeName = scanner.nextLine();
+
+                                    System.out.println("Enter species: ");
+                                    String species = scanner.nextLine();
+
+                                    System.out.println("Enter Age: ");
+                                    int age =  scanner.nextInt();
+                                    scanner.nextLine();
+
+                                    Animal generic = new GenericAnimal(typeName, age, species);
+                                    zoo.addAnimal(generic);
+
+                                    System.out.println(typeName + " has been added as a new animal type.");
+                                }else {
+                                    System.out.println("You do not have permission to add new animal types.");
+                                }
                                 break;
                             }
                             default:
